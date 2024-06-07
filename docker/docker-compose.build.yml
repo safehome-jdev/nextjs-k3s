@@ -1,0 +1,11 @@
+name: nextjs-k3s
+services:
+  nextjs:
+    container_name: nextjs
+    image: safehomejdev/nextjs-k3s:latest
+    build:
+      context: ../nextjs
+      dockerfile: ../nextjs/docker/Dockerfile
+      args:
+        - MONGODB_USERNAME=${MONGODB_USERNAME}
+        - MONGODB_PASSWORD=${MONGODB_PASSWORD}
